@@ -1,10 +1,14 @@
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import Column, Integer, String, Boolean
+from datetime import datetime
+from sqlalchemy.ext.declarative import declarative_base
 
-db = SQLAlchemy()
+Base = declarative_base()
 
-class Task(db.Model):
+class Task(Base):
     __tablename__ = 'tasks'
-    id = db.Column(db.integer, primary_key=True)
-    title = db.Colum(db.String(100), nullable=False)
-    status = db.Column(db.Boolean, default=False)
+    id = Column(integer, primary_key=True)
+    title = Colum(String(100), nullable=False)
+    status = Column(Boolean, default=False)
+    created_at = Column(DateTime, default=datetime.now)
+    
     
