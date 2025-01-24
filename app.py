@@ -24,5 +24,26 @@ def delete(id):
     session.commit()
     return redirect(url_for('index'))
 
+@app.route('/update/<int:id>', methods=['POST'])
+def update(id):
+    task = session.query(Task).filter_by(id=id).first()
+    task.title = request.form['title']
+    session.commit()
+    return redirect(url_for('index'))
+
+@app.route(/complete_task/<int:id>)
+def complete_task(id):
+    task = session.query(Task).filter_by(id=id).first()
+    task.completed = True
+    session.commit()
+    return redirect(url_for('index'))
+
+@app.route(/incomplete_task/<int:id>)
+def incomplete_task(id):
+    task = session.query(Task).filter_by(id=id).first()
+    task.completed = False
+    session.commit()
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run()
