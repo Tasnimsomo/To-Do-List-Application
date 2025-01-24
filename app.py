@@ -5,7 +5,7 @@ from models import Task
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     tasks = session.query(Task).all()
     return render_template('index.html', tasks=tasks)
@@ -17,7 +17,7 @@ def add():
     session.commit()
     return redirect(url_for('index'))
 
-@app.route('/delete/<int:id>')
+@app.route('/delete/<int:id>', methods=['DELETE'])
 def delete(id):
     task = session.query(Task).filter_by(id=id).first()
     session.delete(task)
@@ -31,14 +31,14 @@ def update(id):
     session.commit()
     return redirect(url_for('index'))
 
-@app.route(/complete_task/<int:id>)
+@app.route('/complete_task/<int:id>', methods=['POST'])
 def complete_task(id):
     task = session.query(Task).filter_by(id=id).first()
     task.completed = True
     session.commit()
     return redirect(url_for('index'))
 
-@app.route(/incomplete_task/<int:id>)
+@app.route('/incomplete_task/<int:id>', methods=['POST'])
 def incomplete_task(id):
     task = session.query(Task).filter_by(id=id).first()
     task.completed = False
