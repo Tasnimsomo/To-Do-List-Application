@@ -12,6 +12,7 @@ def index():
     tasks = session.query(Task).all()
     return render_template('index.html', tasks=tasks)
 
+# route for adding a new task
 @app.route('/add', methods=['POST'])
 def add():
     task = Task(title=request.form['title'])
