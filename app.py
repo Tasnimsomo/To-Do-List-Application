@@ -5,6 +5,8 @@ from models import Task
 
 app = Flask(__name__)
 
+
+# route for listing all tasks
 @app.route('/', methods=['GET'])
 def index():
     tasks = session.query(Task).all()
