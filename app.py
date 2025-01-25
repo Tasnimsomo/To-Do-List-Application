@@ -36,6 +36,7 @@ def update(id):
     session.commit()
     return redirect(url_for('index'))
 
+# route for completed tasks
 @app.route('/complete_task/<int:id>', methods=['POST'])
 def complete_task(id):
     task = session.query(Task).filter_by(id=id).first()
