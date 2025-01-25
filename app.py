@@ -44,6 +44,7 @@ def complete_task(id):
     session.commit()
     return redirect(url_for('index'))
 
+// route for incomplete tasks
 @app.route('/incomplete_task/<int:id>', methods=['POST'])
 def incomplete_task(id):
     task = session.query(Task).filter_by(id=id).first()
