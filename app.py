@@ -28,6 +28,7 @@ def delete(id):
     session.commit()
     return redirect(url_for('index'))
 
+# route for updating a task
 @app.route('/update/<int:id>', methods=['POST'])
 def update(id):
     task = session.query(Task).filter_by(id=id).first()
