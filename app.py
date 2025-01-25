@@ -20,6 +20,7 @@ def add():
     session.commit()
     return redirect(url_for('index'))
 
+# route for deleting a task
 @app.route('/delete/<int:id>', methods=['DELETE'])
 def delete(id):
     task = session.query(Task).filter_by(id=id).first()
