@@ -43,3 +43,19 @@ The base URL for all endpoints is `http://<host>:<port>` (e.g., `http://127.0.0.
 - **Response:**
   - Redirects to the `/` route to display the updated task list.
 ---
+### 4. Update a Task
+**Endpoint:** `/update/<int:id>`  
+**Method:** `POST`  
+**Description:** Updates the title of a specific task by its ID.
+
+- **Path Parameter:**
+  - `id` (integer): The ID of the task to update.
+
+- **Request Parameters:**
+  - `title` (string): The new title for the task (from form data).
+
+- **Response:**
+  - Redirects to the `/` route to display the updated task list.
+
+---
+
