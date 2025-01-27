@@ -84,3 +84,14 @@ The base URL for all endpoints is `http://<host>:<port>` (e.g., `http://127.0.0.
 
 ---
 
+## Notes
+1. Ensure the database connection is properly configured in the `database.py` file and the `Task` model is defined in `models.py`.
+2. The `render_template` function expects templates in the `templates` directory.
+3. Adjust HTTP methods or error handling as necessary for production use.
+
+## Example Workflow
+1. Access `/` to view all tasks.
+2. Use `/add` to create a new task by submitting a form.
+3. Interact with `/update/<id>`, `/complete_task/<id>`, or `/incomplete_task/<id>` to modify tasks.
+4. Remove tasks via `/delete/<id>`.
+
