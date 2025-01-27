@@ -32,5 +32,14 @@ The base URL for all endpoints is `http://<host>:<port>` (e.g., `http://127.0.0.
 ---
 
 
+### 3. Delete a Task
+**Endpoint:** `/delete/<int:id>`  
+**Method:** `DELETE`  
+**Description:** Deletes a specific task by its ID.
 
+- **Path Parameter:**
+  - `id` (integer): The ID of the task to delete.
+
+- **Response:**
+  - Redirects to the `/` route to display the updated task list.
 ---
