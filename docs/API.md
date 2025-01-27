@@ -58,4 +58,29 @@ The base URL for all endpoints is `http://<host>:<port>` (e.g., `http://127.0.0.
   - Redirects to the `/` route to display the updated task list.
 
 ---
+### 5. Mark a Task as Completed
+**Endpoint:** `/complete_task/<int:id>`  
+**Method:** `POST`  
+**Description:** Marks a specific task as completed.
+
+- **Path Parameter:**
+  - `id` (integer): The ID of the task to mark as completed.
+
+- **Response:**
+  - Redirects to the `/` route to display the updated task list.
+
+---
+
+### 6. Mark a Task as Incomplete
+**Endpoint:** `/incomplete_task/<int:id>`  
+**Method:** `POST`  
+**Description:** Marks a specific task as incomplete.
+
+- **Path Parameter:**
+  - `id` (integer): The ID of the task to mark as incomplete.
+
+- **Response:**
+  - Redirects to the `/` route to display the updated task list.
+
+---
 
