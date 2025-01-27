@@ -17,3 +17,20 @@ The base URL for all endpoints is `http://<host>:<port>` (e.g., `http://127.0.0.
 - **Response:**
   - Renders the `index.html` template with a list of tasks.
 
+
+### 2. Add a New Task
+**Endpoint:** `/add`  
+**Method:** `POST`  
+**Description:** Adds a new task to the task list.
+
+- **Request Parameters:**
+  - `title` (string): The title of the task (from form data).
+
+- **Response:**
+  - Redirects to the `/` route to display the updated task list.
+
+---
+
+
+
+---
