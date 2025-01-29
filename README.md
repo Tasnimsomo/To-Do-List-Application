@@ -14,3 +14,6 @@ A simple To-Do List application built with Flask. It allows users to add, view, 
 2. Install dependencies:
    ```bash
    pip install flask flask-sqlalchemy
+
+## API
+View the API documentation
