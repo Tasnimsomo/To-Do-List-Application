@@ -11,3 +11,4 @@ connection = create_engine(SQLALCHEMY_DATABASE_URL)
 Base.metadata.create_all(connection)
 
 Session = sessionmaker(bind=connection)
+session = Session()
