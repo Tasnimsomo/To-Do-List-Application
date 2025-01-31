@@ -7,8 +7,7 @@ import os
 load_dotenv('.env')
 SQLALCHEMY_DATABASE_URL = os.getenv('SQLALCHEMY_DATABASE_URL')
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
-Base.metadata.create_all(engine)
+connection = create_engine(SQLALCHEMY_DATABASE_URL)
+Base.metadata.create_all(connection)
 
-Session = sessionmaker(bind=engine)
-session = Session()
+Session = sessionmaker(bind=connection)
