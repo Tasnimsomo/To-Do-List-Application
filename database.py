@@ -13,5 +13,7 @@ connection = create_engine(SQLALCHEMY_DATABASE_URL)
 ## creating tables based on the models stored in the Base.metadata
 Base.metadata.create_all(connection)
 
+## Creating a session to interact with the database
 Session = sessionmaker(bind=connection)
+
 session = Session()
