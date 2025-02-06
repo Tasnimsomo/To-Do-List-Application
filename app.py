@@ -23,6 +23,7 @@ def add_task():
         'description': description,
         'completed': completed,
         'created_at': created_at,
+        'id': new_task.id,
         'message': 'Task added successfully'
     }), 201
 
@@ -35,6 +36,7 @@ def view_tasks():
             "title": task.title,
             "description": task.description,
             "completed": task.completed,
+            "id": task.id,
             "created_at": task.created_at
         }
         for task in tasks
@@ -44,9 +46,19 @@ def view_tasks():
         "tasks": task_list
     }), 200
 
-
-
-
+## remove by id
+@app.route('/delete_task/<int:task_id>', methods=['DELETE'])
+def delete_task(task_id):
+    task = session.query(Task).filter(Task.id == task_id).first()
+    if not task:
+        return jsonify({
+            'message': 'Task not found'
+        }), 404
+    session.delete(task)
+    session.commit()
+    return jsonify({
+        'message': f"Task {task.title} deleted successfully"
+    }), 200
 
 
 if __name__ == '__main__':
