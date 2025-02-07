@@ -27,6 +27,7 @@ def add_task():
         'message': 'Task added successfully'
     }), 201
 
+## list all tasks
 @app.route('/view_tasks', methods=['GET'])
 def view_tasks():
     tasks = session.query(Task).all()
