@@ -45,7 +45,7 @@ def view_tasks():
         "tasks": task_list
     }), 200
 
-## remove by id
+## remove task by id
 @app.route('/delete_task/<int:task_id>', methods=['DELETE'])
 def delete_task(task_id):
     task = session.query(Task).filter(Task.id == task_id).first()
