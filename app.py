@@ -60,7 +60,6 @@ def delete_task(task_id):
     }), 200
 
 
-## update by id
 @app.route('/update_task/<int:task_id>', methods=['PUT'])
 def update_task(task_id):
     task = session.query(Task).filter_by(Task.id == task_id).first()
@@ -85,7 +84,7 @@ def update_task(task_id):
     }), 200
     
 
-# toggle task by id
+# toggle task by id from complete to incomplete and vice versa
 @app.route('/toggle_task/<int:task_id>', methods=['PATCH'])
 def toggle_task(task_id):
     task = session.query(Task).filter(Task.id == task_id).first()
