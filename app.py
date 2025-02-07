@@ -59,7 +59,7 @@ def delete_task(task_id):
         'message': f"Task {task.title} deleted successfully"
     }), 200
 
-
+## update tasks by id
 @app.route('/update_task/<int:task_id>', methods=['PUT'])
 def update_task(task_id):
     task = session.query(Task).filter_by(Task.id == task_id).first()
