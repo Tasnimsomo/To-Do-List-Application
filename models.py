@@ -12,7 +12,7 @@ class Task(Base):
     __tablename__ = 'tasks'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
-    description = db.Column(JSONB)
+    description = db.Column(JSONB) ## this is to ensure that when description is stored it is stored as a dictionary
     completed = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime, default=datetime.now)
 
